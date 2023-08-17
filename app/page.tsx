@@ -173,7 +173,7 @@ const careers = [
         },
       },
       {
-        name: "OutSystemsを利用したシステム開発のトライアル、展開",
+        name: "OutSystemsを利用したアプリケーション開発のトライアル、展開",
         term: "2014年1月～2018年12月",
         role_tasks: [
           {
