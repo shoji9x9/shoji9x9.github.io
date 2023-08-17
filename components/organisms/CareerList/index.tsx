@@ -7,11 +7,14 @@ export function CareerList({
 }: {
   careers: Career[];
 }): React.ReactNode {
-  return careers.map((career) => {
+  return careers.map((career, idx) => {
     return (
-      <div className="mb-4 ml-2">
+      <div className="mb-4 ml-2" key={`carrer_${idx}`}>
         <Heading level={3}>{career.company}</Heading>
-        <div className="flex items-top w-512 flex-wrap">
+        <div
+          className="flex items-top w-512 flex-wrap"
+          key={`carrer_project_${idx}`}
+        >
           <ProjectCardList projects={...career.projects} />
         </div>
       </div>

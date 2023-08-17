@@ -23,7 +23,10 @@ type ProjectCardProps = {
 export function ProjectCard(props: ProjectCardProps) {
   const { name, term, role_tasks, n_members, tech_stack } = props;
   return (
-    <div className="mb-8 border-2 border-gray-300 rounded-lg shadow-xl p-4 mr-4 w-192">
+    <div
+      className="mb-8 border-2 border-gray-300 rounded-lg shadow-xl p-4 mr-4 w-192"
+      key={name}
+    >
       <Heading level={4} className="mb-4">
         {name}
       </Heading>
@@ -42,8 +45,8 @@ export function ProjectCard(props: ProjectCardProps) {
             <div className="mb-2">
               {role_task.summary}
               <ul className="list-disc list-inside">
-                {role_task.items.map((item) => (
-                  <li>{item}</li>
+                {role_task.items.map((item, idx) => (
+                  <li key={`item_${idx}`}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -67,6 +70,7 @@ export function ProjectCard(props: ProjectCardProps) {
                 alt={key}
                 src={tech_stack.items[key as keyof typeof tech_stack.items]}
                 className="mr-2 h-5"
+                key={key}
               />
             );
           })}

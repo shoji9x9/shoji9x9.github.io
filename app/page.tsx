@@ -61,6 +61,7 @@ export default function Home() {
                 src={accountBadges[key as keyof typeof accountBadges].imageSrc}
                 href={accountBadges[key as keyof typeof accountBadges].href}
                 className="mr-2 h-5"
+                key={key}
               />
             );
           })}
@@ -97,6 +98,7 @@ export default function Home() {
                   alt={key}
                   src={languageBadges[key as keyof typeof languageBadges]}
                   className="mr-2 h-5"
+                  key={key}
                 />
               );
             })}
@@ -111,6 +113,7 @@ export default function Home() {
                   alt={key}
                   src={frameworkBadges[key as keyof typeof frameworkBadges]}
                   className="mr-2 h-5"
+                  key={key}
                 />
               );
             })}
