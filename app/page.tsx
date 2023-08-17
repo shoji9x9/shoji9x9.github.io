@@ -1,11 +1,9 @@
 import { Heading } from "@/components/atoms/Heading";
 import { Badge, BadgeWithLink } from "@/components/atoms/Badge";
-import { ProjectCard } from "@/components/organisms/ProjectCard";
 import {
   accountBadges,
   languageBadges,
   frameworkBadges,
-  techStackBadges,
 } from "@/services/badges";
 import { careers } from "@/services/careers";
 import { CareerList } from "@/components/organisms/CareerList";
