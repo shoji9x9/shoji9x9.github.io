@@ -7,6 +7,8 @@ import {
 } from "@/services/badges";
 import { careers } from "@/services/careers";
 import { CareerList } from "@/components/organisms/CareerList";
+import { ArtifactCardList } from "@/components/organisms/ArtifactCardList";
+import { artifacts } from "@/services/artifacts";
 
 export default function Home() {
   return (
@@ -152,33 +154,9 @@ export default function Home() {
       </div>
       <div className="mb-8">
         <Heading level={2}>製作物</Heading>
-        <ul className="list-disc list-inside">
-          <li>
-            React/Next.js
-            <ul className="list-disc list-inside pl-4">
-              <li>
-                <a
-                  href="https://search-components-mui.vercel.app/"
-                  target="_blank"
-                  className="text-blue-500 hover:text-blue-700 underline"
-                >
-                  Qiita記事検索
-                </a>
-              </li>
-            </ul>
-            <ul className="list-disc list-inside pl-4">
-              <li>
-                <a
-                  href="https://vite-react-f4c90.web.app/"
-                  target="_blank"
-                  className="text-blue-500 hover:text-blue-700 underline"
-                >
-                  メモアプリ（Firebase）
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div className="flex items-top w-512 flex-wrap">
+          <ArtifactCardList artifacts={...artifacts} />
+        </div>
       </div>
       <div className="mb-8">
         <Heading level={2}>希望条件</Heading>

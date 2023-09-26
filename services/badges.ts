@@ -51,13 +51,27 @@ export const frameworkBadges = {
     "https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white",
   React:
     "https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white",
+  Recoil:
+    "https://img.shields.io/badge/-Recoil-3578e5.svg?logo=&style=flat-square",
+  NextJS:
+    "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+  TailwindCSS:
+    "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+  Storybook:
+    "https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white",
   Drupal:
     "https://img.shields.io/badge/drupal-%230678BE.svg?style=for-the-badge&logo=drupal&logoColor=white",
+  Firebase:
+    "https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase",
   Oracle:
     "https://img.shields.io/badge/-Oracle-F80000.svg?logo=oracle&style=flat-square",
   DB2: "https://img.shields.io/badge/DB2-ccc.svg?logo=db2&color=0F4D92&style=flat-square&logoColor=white",
   Azure:
     "https://img.shields.io/badge/Microsoft_Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white",
+  Vercel:
+    "https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white",
+  GithubActions:
+    "https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white",
 };
 
 // languageBadgesとframeworkBadgesの論理和とする
