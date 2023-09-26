@@ -151,6 +151,36 @@ export default function Home() {
         </ul>
       </div>
       <div className="mb-8">
+        <Heading level={2}>製作物</Heading>
+        <ul className="list-disc list-inside">
+          <li>
+            React/Next.js
+            <ul className="list-disc list-inside pl-4">
+              <li>
+                <a
+                  href="https://search-components-mui.vercel.app/"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 underline"
+                >
+                  Qiita記事検索
+                </a>
+              </li>
+            </ul>
+            <ul className="list-disc list-inside pl-4">
+              <li>
+                <a
+                  href="https://vite-react-f4c90.web.app/"
+                  target="_blank"
+                  className="text-blue-500 hover:text-blue-700 underline"
+                >
+                  メモアプリ（Firebase）
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div className="mb-8">
         <Heading level={2}>希望条件</Heading>
         <a
           href="https://zenn.dev/shoji9x9/articles/741bba963942a6"
