@@ -11,6 +11,9 @@ import { ArtifactCardList } from "@/components/organisms/ArtifactCardList";
 import { artifacts } from "@/services/artifacts";
 
 export default async function Home() {
+  const key = process.env.LINK_PREVIEW_API_KEY;
+  console.log(`Home: ${key?.substring(0, 3)}`);
+
   const preview = await getPreview();
 
   return (
@@ -185,6 +188,7 @@ export default async function Home() {
 // https://www.linkpreview.net/ からlaprasのプレビューを取得
 async function getPreview() {
   const key = process.env.LINK_PREVIEW_API_KEY;
+  console.log(`getPreview: ${key?.substring(0, 3)}`);
   const res = await fetch(
     `http://api.linkpreview.net/?key=${key}&q=https://lapras.com/public/shoji9x9`,
   );
