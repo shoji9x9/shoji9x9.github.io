@@ -6,12 +6,14 @@
  */
 export function containPresenter(
   Container: React.FunctionComponent<any>,
-  Presenter: React.FunctionComponent<any>
+  Presenter: React.FunctionComponent<any>,
 ): React.FunctionComponent<any> {
-  return (props: any) => (
-    <Container
-      presenter={(presenterProps: any) => <Presenter {...presenterProps} />}
-      {...props}
-    />
-  );
+  return function ContainPresenter(props: any) {
+    return (
+      <Container
+        presenter={(presenterProps: any) => <Presenter {...presenterProps} />}
+        {...props}
+      />
+    );
+  };
 }

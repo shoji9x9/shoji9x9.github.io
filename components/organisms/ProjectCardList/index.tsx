@@ -24,6 +24,6 @@ export function ProjectCardList({
       },
     };
 
-    return <ProjectCard {...projectWithBadge} />;
+    return <ProjectCard {...projectWithBadge} key={project.term} />;
   });
 }

@@ -174,7 +174,7 @@ export default async function Home() {
         <Heading level={2}>LAPRAS</Heading>
         <div className="w-192">
           <a href={preview.url} target="_blank">
-            <img src={preview.image} />
+            <img src={preview.image} alt={preview.title} />
           </a>
         </div>
       </div>
@@ -186,7 +186,7 @@ export default async function Home() {
 async function getPreview() {
   const key = process.env.LINK_PREVIEW_API_KEY;
   const res = await fetch(
-    `http://api.linkpreview.net/?key=${key}&q=https://lapras.com/public/shoji9x9`
+    `http://api.linkpreview.net/?key=${key}&q=https://lapras.com/public/shoji9x9`,
   );
   const preview = await res.json();
   return preview;

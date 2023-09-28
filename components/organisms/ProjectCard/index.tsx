@@ -42,7 +42,7 @@ export function ProjectCard(props: ProjectCardProps) {
         </Heading>
         {role_tasks.map((role_task) => {
           return (
-            <div className="mb-2">
+            <div className="mb-2" key={role_task.summary}>
               {role_task.summary}
               <ul className="list-disc list-inside">
                 {role_task.items.map((item, idx) => (

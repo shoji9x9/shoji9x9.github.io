@@ -21,6 +21,6 @@ export function ArtifactCardList({
       tech_stack: tech_stack_items,
     };
 
-    return <ArtifactCard {...artifactWithBadge} />;
+    return <ArtifactCard {...artifactWithBadge} key={artifact.articleUrl} />;
   });
 }
