@@ -10,7 +10,9 @@ import { CareerList } from "@/components/organisms/CareerList";
 import { ArtifactCardList } from "@/components/organisms/ArtifactCardList";
 import { artifacts } from "@/services/artifacts";
 
-export default function Home() {
+export default async function Home() {
+  const preview = await getPreview();
+
   return (
     <main className="p-24">
       <div className="mb-8">
@@ -169,19 +171,23 @@ export default function Home() {
         </a>
       </div>
       <div className="mb-8">
-        <Heading level={2}>リンク</Heading>
-        <ul className="list-disc list-inside">
-          <li>
-            <a
-              href="https://lapras.com/public/shoji9x9"
-              target="_blank"
-              className="text-blue-500 hover:text-blue-700 underline"
-            >
-              LAPRAS
-            </a>
-          </li>
-        </ul>
+        <Heading level={2}>LAPRAS</Heading>
+        <div className="w-192">
+          <a href={preview.url} target="_blank">
+            <img src={preview.image} />
+          </a>
+        </div>
       </div>
     </main>
   );
+}
+
+// https://www.linkpreview.net/ からlaprasのプレビューを取得
+async function getPreview() {
+  const key = process.env.LINK_PREVIEW_API_KEY;
+  const res = await fetch(
+    `http://api.linkpreview.net/?key=${key}&q=https://lapras.com/public/shoji9x9`
+  );
+  const preview = await res.json();
+  return preview;
 }
