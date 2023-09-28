@@ -186,12 +186,12 @@ export default async function Home() {
 async function getPreview() {
   const key = process.env.LINK_PREVIEW_API_KEY;
 
-  // { cache: 'no-store' } オプションを付けることによりSSRとしているが、
-  // GitHub Pages では静的サイトとして扱われるため、ビルド時にプレビューが更新されることになるはず
+  // 本来はページを開く度にプレビューを取得するために { cache: 'no-store' } オプションを付与しSSRとしたいが、
+  // GitHub Pages では静的サイトとして扱われるため、このオプションは付与しない
+  // （オプションを付与するとデプロイ自体は完了するが、ページを開くと404エラーとなってしまう）
   // https://zenn.dev/yamadadayo123/articles/6cb4f586de0183#ssr-%2F-isr-%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%96%B9%E6%B3%95%E3%81%8C%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%9F
   const res = await fetch(
     `http://api.linkpreview.net/?key=${key}&q=https://lapras.com/public/shoji9x9`,
-    // { cache: "no-store" },
   );
   const preview = await res.json();
   console.log("Got preview: ", preview);
