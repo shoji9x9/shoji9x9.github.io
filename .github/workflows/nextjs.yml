@@ -28,15 +28,12 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      LINK_PREVIEW_API_KEY: ${{secrets.LINK_PREVIEW_API_KEY}}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          echo "the key is ${LINK_PREVIEW_API_KEY:0:3}"
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
@@ -76,6 +73,11 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: check env
+        env:
+          LINK_PREVIEW_API_KEY: ${{secrets.LINK_PREVIEW_API_KEY}}
+        run: |
+          echo "the key is ${LINK_PREVIEW_API_KEY:0:3}"
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
