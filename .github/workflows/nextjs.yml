@@ -29,7 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      LINK_PREVIEW_API_KEY: secret value
+      LINK_PREVIEW_API_KEY: ${{ secrets.LINK_PREVIEW_API_KEY2 }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
