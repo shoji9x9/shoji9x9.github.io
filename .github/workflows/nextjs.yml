@@ -29,7 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      LINK_PREVIEW_API_KEY: ${{ secrets.LINK_PREVIEW_API_KEY2 }}
+      LINK_PREVIEW_API_KEY: ${{ secrets.LINK_PREVIEW_API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -75,9 +75,6 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: check env
-        run: |
-          echo "the key is ${#LINK_PREVIEW_API_KEY} chars."
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
