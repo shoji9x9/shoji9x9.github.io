@@ -191,7 +191,7 @@ async function getPreview() {
   // https://zenn.dev/yamadadayo123/articles/6cb4f586de0183#ssr-%2F-isr-%E3%81%AE%E8%A8%AD%E5%AE%9A%E6%96%B9%E6%B3%95%E3%81%8C%E5%A4%89%E3%82%8F%E3%81%A3%E3%81%9F
   const res = await fetch(
     `http://api.linkpreview.net/?key=${key}&q=https://lapras.com/public/shoji9x9`,
-    { cache: "no-store" },
+    // { cache: "no-store" },
   );
   const preview = await res.json();
   console.log("Got preview: ", preview);
