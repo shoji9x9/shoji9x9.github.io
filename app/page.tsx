@@ -146,6 +146,12 @@ export default async function Home() {
             </ul>
           </li>
           <li>
+            AWS
+            <ul className="list-disc list-inside pl-4">
+              <li>AWS Certified Cloud Practitioner</li>
+            </ul>
+          </li>
+          <li>
             その他
             <ul className="list-disc list-inside pl-4">
               <li>英語検定2級</li>
